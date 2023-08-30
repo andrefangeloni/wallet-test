@@ -1,4 +1,15 @@
 import React from 'react';
+import { ThemeProvider } from 'styled-components';
+
+import { CustomStatusBar } from './components';
+
 import { Home } from './screens';
 
-export const App = () => <Home />;
+import { theme } from './styles/theme';
+
+export const App = () => (
+  <ThemeProvider theme={theme}>
+    <CustomStatusBar />
+    <Home />
+  </ThemeProvider>
+);
