@@ -2,11 +2,12 @@ import React from 'react';
 
 import { CustomButton } from '../../components';
 
-import { useAppTranslation } from '../../hooks';
+import { useAppNavigation, useAppTranslation } from '../../hooks';
 
 import * as S from './styles';
 
 export const Home = () => {
+  const { navigate } = useAppNavigation();
   const { translate } = useAppTranslation();
 
   return (
@@ -24,7 +25,7 @@ export const Home = () => {
       <CustomButton
         variant="secondary"
         text={translate('addCard')}
-        onPress={() => null}
+        onPress={() => navigate('CardRegistration')}
       />
     </S.Container>
   );
