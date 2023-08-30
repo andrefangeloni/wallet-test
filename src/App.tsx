@@ -7,6 +7,8 @@ import { Home } from './screens';
 
 import { theme } from './styles/theme';
 
+import './i18n';
+
 export const App = () => (
   <ThemeProvider theme={theme}>
     <CustomStatusBar />
