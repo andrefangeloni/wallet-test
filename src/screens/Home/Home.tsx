@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { CustomButton } from '../../components';
+import { CustomButton, PrimaryContainer } from '../../components';
 
 import { useAppNavigation, useAppTranslation } from '../../hooks';
 
@@ -11,22 +11,24 @@ export const Home = () => {
   const { translate } = useAppTranslation();
 
   return (
-    <S.Container>
-      <S.Title>{translate('appName')}</S.Title>
+    <PrimaryContainer noHeader>
+      <S.Container>
+        <S.Title>{translate('appName')}</S.Title>
 
-      <S.ButtonWrapper>
+        <S.ButtonWrapper>
+          <CustomButton
+            variant="primary"
+            text={translate('myCards')}
+            onPress={() => null}
+          />
+        </S.ButtonWrapper>
+
         <CustomButton
-          variant="primary"
-          text={translate('myCards')}
-          onPress={() => null}
+          variant="secondary"
+          text={translate('addCard')}
+          onPress={() => navigate('CardRegistration')}
         />
-      </S.ButtonWrapper>
-
-      <CustomButton
-        variant="secondary"
-        text={translate('addCard')}
-        onPress={() => navigate('CardRegistration')}
-      />
-    </S.Container>
+      </S.Container>
+    </PrimaryContainer>
   );
 };
