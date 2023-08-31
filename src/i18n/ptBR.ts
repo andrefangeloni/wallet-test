@@ -3,7 +3,7 @@ export const ptBR = {
   appName: 'Wallet Test',
   cardHolder: 'Nome do titular do cartão',
   cardNumber: 'Número do cartão',
-  expiresIn: 'vencimento',
+  expirationDate: 'vencimento',
   myCards: 'Meus cartões',
   next: 'Avançar',
   registration: 'Cadastro',

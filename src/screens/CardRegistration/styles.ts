@@ -8,6 +8,7 @@ type InputWrapperProps = {
 export const KAV = styled.KeyboardAvoidingView.attrs({
   enabled: Platform.OS === 'ios',
   behavior: 'padding',
+  keyboardVerticalOffset: 100,
 })`
   flex: 1;
 `;
@@ -28,18 +29,17 @@ export const Main = styled.View`
 export const Title = styled.Text`
   font-size: 32px;
   font-weight: bold;
-  margin-bottom: 32px;
+  margin-bottom: 24px;
   text-align: center;
   color: ${({ theme }) => theme.colors.white};
 `;
 
 export const InputWrapper = styled.View<InputWrapperProps>`
   width: ${({ size }) => (size === 'short' ? 47 : 100)}%;
-  margin-bottom: 32px;
+  margin-bottom: 24px;
 `;
 
 export const Row = styled.View`
   flex-direction: row;
   justify-content: space-between;
-  margin-bottom: 32px;
 `;
