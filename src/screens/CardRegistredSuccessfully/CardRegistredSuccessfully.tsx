@@ -1,12 +1,17 @@
 import React from 'react';
 
-import { CustomButton, PrimaryContainer } from '../../components';
+import { CreditCard, CustomButton, PrimaryContainer } from '../../components';
 
-import { useAppSelector, useAppTranslation } from '../../hooks';
+import {
+  useAppSelector,
+  useAppNavigation,
+  useAppTranslation,
+} from '../../hooks';
 
 import * as S from './styles';
 
 export const CardRegistredSuccessfully = () => {
+  const { navigate } = useAppNavigation();
   const { translate } = useAppTranslation();
 
   const { addedCard } = useAppSelector(({ card }) => card);
@@ -18,20 +23,17 @@ export const CardRegistredSuccessfully = () => {
 
         <S.Subtitle>{translate('cardAddedSuccessfully')}</S.Subtitle>
 
-        <S.BlackCard>
-          <S.BlackCardTitle>{translate('blackCard')}</S.BlackCardTitle>
-
-          <S.InfosText>{addedCard.name}</S.InfosText>
-          <S.InfosText>{addedCard.number}</S.InfosText>
-          <S.InfosText>{`${translate('validity')} ${
-            addedCard.expirationDate
-          }`}</S.InfosText>
-        </S.BlackCard>
+        <CreditCard
+          variant="black"
+          name={addedCard.name}
+          number={addedCard.number}
+          expirationDate={addedCard.expirationDate}
+        />
 
         <CustomButton
           variant="primary"
           text={translate('next')}
-          onPress={() => null}
+          onPress={() => navigate('WalletAnimated')}
         />
       </S.Container>
     </PrimaryContainer>

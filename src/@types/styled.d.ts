@@ -12,6 +12,7 @@ declare module 'styled-components' {
       buttonTextDisabled: string;
       placeholder: string;
       blackCard: string;
+      greenCardText: string;
     };
   }
 }

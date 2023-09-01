@@ -6,6 +6,7 @@ export const ptBR = {
   cardNumber: 'Número do cartão',
   cardAddedSuccessfully: 'Cartão cadastrado com sucesso',
   expirationDate: 'vencimento',
+  greenCard: 'Green card',
   myCards: 'Meus cartões',
   next: 'Avançar',
   registration: 'Cadastro',

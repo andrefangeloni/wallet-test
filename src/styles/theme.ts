@@ -10,6 +10,7 @@ const colors = {
   BUTTON_TEXT_DISABLED: '#bbb',
   PLACEHOLDER: '#aaa',
   BLACK_CARD: '#111',
+  GREEN_CARD_TEXT: '#3f3f3f',
 };
 
 export const theme: DefaultTheme = {
@@ -23,5 +24,6 @@ export const theme: DefaultTheme = {
     buttonTextDisabled: colors.BUTTON_TEXT_DISABLED,
     placeholder: colors.PLACEHOLDER,
     blackCard: colors.BLACK_CARD,
+    greenCardText: colors.GREEN_CARD_TEXT,
   },
 };

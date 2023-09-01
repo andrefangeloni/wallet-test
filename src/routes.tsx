@@ -2,7 +2,12 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import { Home, CardRegistration, CardRegistredSuccessfully } from './screens';
+import {
+  Home,
+  WalletAnimated,
+  CardRegistration,
+  CardRegistredSuccessfully,
+} from './screens';
 
 const { Navigator, Screen } = createNativeStackNavigator();
 
@@ -19,6 +24,7 @@ export const Routes = () => (
         name="CardRegistredSuccessfully"
         component={CardRegistredSuccessfully}
       />
+      <Screen name="WalletAnimated" component={WalletAnimated} />
     </Navigator>
   </NavigationContainer>
 );
