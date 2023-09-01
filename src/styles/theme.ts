@@ -8,6 +8,8 @@ const colors = {
   BACKGROUND: '#142995',
   BUTTON_DISABLED: '#eee',
   BUTTON_TEXT_DISABLED: '#bbb',
+  PLACEHOLDER: '#aaa',
+  BLACK_CARD: '#111',
 };
 
 export const theme: DefaultTheme = {
@@ -19,5 +21,7 @@ export const theme: DefaultTheme = {
     background: colors.BACKGROUND,
     buttonDisabled: colors.BUTTON_DISABLED,
     buttonTextDisabled: colors.BUTTON_TEXT_DISABLED,
+    placeholder: colors.PLACEHOLDER,
+    blackCard: colors.BLACK_CARD,
   },
 };

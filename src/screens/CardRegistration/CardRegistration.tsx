@@ -1,8 +1,9 @@
 import React from 'react';
+import { TextInput } from 'react-native';
 
 import { CustomButton, CustomInput, PrimaryContainer } from '../../components';
 
-import { useAppTranslation } from '../../hooks';
+import { useAppTranslation, useCard } from '../../hooks';
 
 import {
   onlyNumbers,
@@ -13,6 +14,7 @@ import {
 import * as S from './styles';
 
 export const CardRegistration = () => {
+  const { handleAddCard } = useCard();
   const { translate } = useAppTranslation();
 
   const [cardNumber, setCardNumber] = React.useState('');
@@ -20,13 +22,30 @@ export const CardRegistration = () => {
   const [expirationDate, setExpirationDate] = React.useState('');
   const [securityCode, setSecurityCode] = React.useState('');
 
-  const validateFields = () =>
+  const cardHolderRef = React.useRef<TextInput>(null);
+  const expirationRef = React.useRef<TextInput>(null);
+  const cvvRef = React.useRef<TextInput>(null);
+
+  const checkIncompletedFields = () =>
     !!(
       cardNumber.length < 19 ||
       cardHolder.length < 6 ||
       expirationDate.length < 5 ||
       securityCode.length < 3
     );
+
+  const handleSubmit = () => {
+    if (!checkIncompletedFields()) {
+      const data = {
+        number: cardNumber,
+        name: cardHolder,
+        expirationDate,
+        cvv: securityCode,
+      };
+
+      handleAddCard(data);
+    }
+  };
 
   return (
     <PrimaryContainer>
@@ -40,6 +59,8 @@ export const CardRegistration = () => {
                 maxLength={19}
                 value={cardNumber}
                 inputLabel={translate('cardNumber')}
+                returnKeyType="next"
+                onSubmitEditing={() => cardHolderRef?.current?.focus()}
                 onChangeText={(text) =>
                   setCardNumber(cardNumberInputMask(text))
                 }
@@ -50,9 +71,12 @@ export const CardRegistration = () => {
               <CustomInput
                 maxLength={32}
                 value={cardHolder}
+                ref={cardHolderRef}
+                returnKeyType="next"
                 autoCapitalize="characters"
                 onChangeText={setCardHolder}
                 inputLabel={translate('cardHolder')}
+                onSubmitEditing={() => expirationRef?.current?.focus()}
               />
             </S.InputWrapper>
 
@@ -61,8 +85,11 @@ export const CardRegistration = () => {
                 <CustomInput
                   maxLength={5}
                   placeholder="00/00"
+                  ref={expirationRef}
                   value={expirationDate}
+                  returnKeyType="next"
                   inputLabel={translate('expirationDate')}
+                  onSubmitEditing={() => cvvRef?.current?.focus()}
                   onChangeText={(text) =>
                     setExpirationDate(expirationDateInputMask(text))
                   }
@@ -71,10 +98,13 @@ export const CardRegistration = () => {
 
               <S.InputWrapper size="short">
                 <CustomInput
+                  ref={cvvRef}
                   maxLength={3}
                   placeholder="***"
                   value={securityCode}
+                  returnKeyType="done"
                   inputLabel={translate('securityCode')}
+                  onSubmitEditing={handleSubmit}
                   onChangeText={(text) => setSecurityCode(onlyNumbers(text))}
                 />
               </S.InputWrapper>
@@ -83,8 +113,8 @@ export const CardRegistration = () => {
             <CustomButton
               variant="primary"
               text={translate('next')}
-              disabled={validateFields()}
-              onPress={() => null}
+              disabled={checkIncompletedFields()}
+              onPress={handleSubmit}
             />
           </S.Main>
         </S.Container>

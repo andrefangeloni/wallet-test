@@ -10,6 +10,8 @@ declare module 'styled-components' {
       background: string;
       buttonDisabled: string;
       buttonTextDisabled: string;
+      placeholder: string;
+      blackCard: string;
     };
   }
 }
