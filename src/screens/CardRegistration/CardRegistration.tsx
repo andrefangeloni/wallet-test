@@ -1,5 +1,6 @@
 import React from 'react';
 import { TextInput } from 'react-native';
+import uuid from 'react-native-uuid';
 
 import { CustomButton, CustomInput, PrimaryContainer } from '../../components';
 
@@ -37,10 +38,12 @@ export const CardRegistration = () => {
   const handleSubmit = () => {
     if (!checkIncompletedFields()) {
       const data = {
+        id: String(uuid.v4()),
         number: cardNumber,
         name: cardHolder,
         expirationDate,
         cvv: securityCode,
+        type: 'black' as const,
       };
 
       handleAddCard(data);
@@ -48,7 +51,7 @@ export const CardRegistration = () => {
   };
 
   return (
-    <PrimaryContainer>
+    <PrimaryContainer primaryHeader>
       <S.KAV>
         <S.Container>
           <S.Main>

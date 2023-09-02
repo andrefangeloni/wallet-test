@@ -1,14 +1,22 @@
 import React from 'react';
 
+import wallet from '../../assets/images/wallet.png';
+
 import { PrimaryContainer } from '../../components';
 
-import wallet from '../../assets/images/wallet.png';
+import { useCard } from '../../hooks';
 
 import * as S from './styles';
 
 export const WalletAnimated = () => {
+  const { getCards } = useCard();
+
+  React.useEffect(() => {
+    getCards();
+  }, [getCards]);
+
   return (
-    <PrimaryContainer noHeader>
+    <PrimaryContainer>
       <S.Container>
         <S.ImageWrapper>
           <S.Wallet source={wallet} />

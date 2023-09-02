@@ -13,6 +13,7 @@ declare module 'styled-components' {
       placeholder: string;
       blackCard: string;
       greenCardText: string;
+      backgroundOverlay: string;
     };
   }
 }

@@ -18,22 +18,6 @@ export const Subtitle = styled(Title)`
   margin-bottom: 32px;
 `;
 
-export const BlackCard = styled.View`
-  width: 100%;
-  padding: 32px 16px;
-  border-radius: 16px;
-  margin-bottom: 32px;
-  background-color: ${({ theme }) => theme.colors.blackCard};
-`;
-
-export const InfosText = styled.Text`
-  font-size: 16px;
-  font-weight: bold;
-  text-transform: capitalize;
-  color: ${({ theme }) => theme.colors.white};
-`;
-
-export const BlackCardTitle = styled(InfosText)`
-  font-size: 20px;
+export const CardWrapper = styled.View`
   margin-bottom: 32px;
 `;

@@ -4,6 +4,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import {
   Home,
+  MyCards,
   WalletAnimated,
   CardRegistration,
   CardRegistredSuccessfully,
@@ -19,6 +20,7 @@ export const Routes = () => (
       }}
     >
       <Screen name="Home" component={Home} />
+      <Screen name="MyCards" component={MyCards} />
       <Screen name="CardRegistration" component={CardRegistration} />
       <Screen
         name="CardRegistredSuccessfully"

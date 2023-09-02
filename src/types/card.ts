@@ -1,7 +1,8 @@
 export type Card = {
-  id?: string;
+  id: string;
   number: string;
   name: string;
   expirationDate: string;
   cvv: string;
+  type: 'black' | 'green';
 };

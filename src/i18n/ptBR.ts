@@ -8,8 +8,11 @@ export const ptBR = {
   expirationDate: 'vencimento',
   greenCard: 'Green card',
   myCards: 'Meus cartões',
+  networkError: 'Falha na comunicação com a internet',
   next: 'Avançar',
+  payWithThisCard: 'Pagar com este cartão',
   registration: 'Cadastro',
   securityCode: 'Código de segurança',
+  useThisCard: 'Usar este cartão',
   validity: 'Validade',
 };

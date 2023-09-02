@@ -10,7 +10,6 @@ export const Card = styled.View<Props>`
   width: 100%;
   padding: 32px 16px;
   border-radius: 16px;
-  margin-bottom: 32px;
   background-color: ${({ theme, variant }) =>
     variant === 'black' ? theme.colors.blackCard : theme.colors.secondary};
 `;

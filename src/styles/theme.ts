@@ -11,6 +11,7 @@ const colors = {
   PLACEHOLDER: '#aaa',
   BLACK_CARD: '#111',
   GREEN_CARD_TEXT: '#3f3f3f',
+  BACKGROUND_OVERLAY: '#eee',
 };
 
 export const theme: DefaultTheme = {
@@ -25,5 +26,6 @@ export const theme: DefaultTheme = {
     placeholder: colors.PLACEHOLDER,
     blackCard: colors.BLACK_CARD,
     greenCardText: colors.GREEN_CARD_TEXT,
+    backgroundOverlay: colors.BACKGROUND_OVERLAY,
   },
 };

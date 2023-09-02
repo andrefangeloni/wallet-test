@@ -11,7 +11,7 @@ export const Home = () => {
   const { translate } = useAppTranslation();
 
   return (
-    <PrimaryContainer noHeader>
+    <PrimaryContainer>
       <S.Container>
         <S.Title>{translate('appName')}</S.Title>
 
@@ -19,7 +19,7 @@ export const Home = () => {
           <CustomButton
             variant="primary"
             text={translate('myCards')}
-            onPress={() => null}
+            onPress={() => navigate('WalletAnimated')}
           />
         </S.ButtonWrapper>
 

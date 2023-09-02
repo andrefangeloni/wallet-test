@@ -1,26 +1,42 @@
 import React from 'react';
 
-import { CustomHeader } from '../../components';
+import { CustomHeader, SecondaryHeader } from '../../components';
 
 import { useAppTranslation } from '../../hooks';
 
 import * as S from './styles';
 
 type Props = {
-  noHeader?: boolean;
+  noOverlay?: boolean;
+  primaryHeader?: boolean;
+  secondaryHeader?: boolean;
   children: React.ReactNode;
 };
 
-export const PrimaryContainer = ({ noHeader, children }: Props) => {
+export const PrimaryContainer = ({
+  children,
+  noOverlay,
+  primaryHeader,
+  secondaryHeader,
+}: Props) => {
   const { translate } = useAppTranslation();
 
   return (
     <S.Container>
-      {noHeader ? null : (
+      {noOverlay ? null : (
+        <>
+          <S.BackgroundAnimated top />
+          <S.BackgroundAnimated />
+        </>
+      )}
+
+      {primaryHeader ? (
         <S.HeaderWrapper>
           <CustomHeader title={translate('registration')} />
         </S.HeaderWrapper>
-      )}
+      ) : null}
+
+      {secondaryHeader ? <SecondaryHeader /> : null}
 
       <S.Main>{children}</S.Main>
     </S.Container>
