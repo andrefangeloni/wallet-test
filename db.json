@@ -7,6 +7,14 @@
       "name": "John Doe",
       "expirationDate": "08/28",
       "type": "green"
+    },
+    {
+      "id": "7767fa6e-893f-44ef-8db9-fd44e2771b47",
+      "number": "4562 2954 6321 6099",
+      "name": "ANDRE ANGELONI",
+      "expirationDate": "09/25",
+      "cvv": "645",
+      "type": "black"
     }
   ]
 }
