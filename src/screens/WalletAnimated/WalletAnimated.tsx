@@ -16,7 +16,7 @@ export const WalletAnimated = () => {
   }, [getCards]);
 
   return (
-    <PrimaryContainer>
+    <PrimaryContainer animated>
       <S.Container>
         <S.ImageWrapper>
           <S.Wallet source={wallet} />

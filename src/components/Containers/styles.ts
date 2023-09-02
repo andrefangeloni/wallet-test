@@ -1,10 +1,5 @@
-import { DefaultTheme } from 'styled-components';
-import styled, { css } from 'styled-components/native';
-
-type Props = {
-  theme: DefaultTheme;
-  top?: boolean;
-};
+import { StyleSheet, ViewStyle } from 'react-native';
+import styled from 'styled-components/native';
 
 export const Container = styled.View`
   flex: 1;
@@ -20,25 +15,27 @@ export const Main = styled.View`
   flex: 1;
 `;
 
-export const BackgroundAnimated = styled.View<Props>`
-  position: absolute;
-  height: 230px;
-  width: 370px;
-  opacity: 0.2;
-  border-bottom-left-radius: 50px;
-  border-bottom-right-radius: 50px;
-  background-color: ${({ theme }) => theme.colors.backgroundOverlay};
+const sharedStyles: ViewStyle = {
+  position: 'absolute',
+  height: 230,
+  width: 370,
+  opacity: 0.2,
+  borderBottomLeftRadius: 50,
+  borderBottomRightRadius: 50,
+  backgroundColor: '#eee',
+};
 
-  ${({ top }) =>
-    top
-      ? css`
-          transform: rotate(-40deg);
-          top: -70px;
-          right: 120px;
-        `
-      : css`
-          transform: rotate(140deg);
-          bottom: -70px;
-          left: 120px;
-        `}
-`;
+export const styles = StyleSheet.create({
+  overlayTop: {
+    ...sharedStyles,
+    top: -70,
+    right: 120,
+    transform: [{ rotate: '-40deg' }],
+  },
+  overlayBottom: {
+    ...sharedStyles,
+    bottom: -70,
+    left: 120,
+    transform: [{ rotate: '140deg' }],
+  },
+});

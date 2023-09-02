@@ -24,7 +24,7 @@ export const useCard = () => {
           index: 0,
           routes: [{ name: 'MyCards' }],
         });
-      }, 2000);
+      }, 1500);
     } catch (e: any) {
       Alert.alert('Something went wrong. Try again');
     }
