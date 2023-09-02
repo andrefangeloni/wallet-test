@@ -9,8 +9,8 @@
    - [Node.js](#nodejs)
    - [Yarn](#yarn)
    - [JSON Server](#json-server)
+   - [React Native CLI](#react-native-cli)
 - [Built With](#built-with)
-- [LICENSE](#mortar_board-license)
 - [Author](#author)
 
 # :camera: Screenshots
@@ -26,7 +26,7 @@ Click to expand <br />
 - #### [Yarn](https://yarnpkg.com)
 - #### [JSON Server](https://github.com/typicode/json-server)
 
-:warning: Assuming that you've already the [Environment Setup](https://reactnative.dev/docs/environment-setup) for React Native CLI Quickstart
+- ### [React Native CLI Environment Setup](https://reactnative.dev/docs/environment-setup)
 
 ## Installation
 
@@ -52,7 +52,7 @@ $ yarn android
 $ yarn pods && yarn ios
 ```
 
-#### Bulti With:
+#### Built With:
 
 - [React Native](https://reactnative.dev) - A framework for building native apps with React
 - [React Navigation](https://reactnavigation.org) - Routing and navigation for your React Native apps
@@ -62,10 +62,6 @@ $ yarn pods && yarn ios
 - [Redux Toolkit](https://redux-toolkit.js.org/) - For state management
 - [Reanimated](https://docs.swmansion.com/react-native-reanimated/) - For smooth animation on components
 - [Styled Components](https://styled-components.com) - For styling
-
-# :mortar_board: LICENSE
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE.md) file for details.
 
 # Author
 
